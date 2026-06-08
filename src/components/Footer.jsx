@@ -1,59 +1,75 @@
-import { Link } from 'react-router-dom'
-import { Box, Typography } from '@mui/material'
+import { Link } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
 import {
   SiInstagram,
   SiSnapchat,
   SiTiktok,
   SiX,
   SiYoutube,
-} from 'react-icons/si'
+} from "react-icons/si";
 
 const SOCIALS = [
-  { icon: SiInstagram, label: 'Instagram', href: 'https://instagram.com' },
-  { icon: SiSnapchat, label: 'Snapchat', href: 'https://snapchat.com' },
-  { icon: SiTiktok, label: 'TikTok', href: 'https://tiktok.com' },
-  { icon: SiX, label: 'X', href: 'https://x.com' },
-  { icon: SiYoutube, label: 'YouTube', href: 'https://youtube.com' },
-]
+  {
+    icon: SiInstagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/presspaperai/",
+  },
+  {
+    icon: SiSnapchat,
+    label: "Snapchat",
+    href: "https://www.snapchat.com/@presspaper?sender_web_id=c95e01d1-5d89-4bdc-8eff-613e08b84ed5",
+  },
+  {
+    icon: SiTiktok,
+    label: "TikTok",
+    href: "https://www.tiktok.com/@presspaper",
+  },
+  { icon: SiX, label: "X", href: "https://x.com/presspaperai" },
+  {
+    icon: SiYoutube,
+    label: "YouTube",
+    href: "https://www.youtube.com/@PresspaperAI",
+  },
+];
 
 function FooterLink({ children, to, href }) {
   const sx = {
-    color: 'text.secondary',
-    fontSize: '0.9rem',
-    textDecoration: 'none',
-    '&:hover': { color: 'text.primary' },
-    display: 'block',
+    color: "text.secondary",
+    fontSize: "0.9rem",
+    textDecoration: "none",
+    "&:hover": { color: "text.primary" },
+    display: "block",
     mb: 1,
-  }
+  };
   if (to) {
     return (
       <Box component={Link} to={to} sx={sx}>
         {children}
       </Box>
-    )
+    );
   }
   return (
     <Box component="a" href={href} sx={sx}>
       {children}
     </Box>
-  )
+  );
 }
 
 export default function Footer() {
   return (
     <Box
       component="footer"
-      sx={{ borderTop: '1px solid', borderColor: 'divider' }}
+      sx={{ borderTop: "1px solid", borderColor: "divider" }}
     >
       <div className="mx-auto max-w-container px-5 py-12 sm:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
-            <Typography sx={{ fontWeight: 800, fontSize: '1.4rem', mb: 1.5 }}>
+            <Typography sx={{ fontWeight: 800, fontSize: "1.4rem", mb: 1.5 }}>
               Presspaper
             </Typography>
             <Typography
               variant="body2"
-              sx={{ color: 'text.secondary', maxWidth: 240, lineHeight: 1.55 }}
+              sx={{ color: "text.secondary", maxWidth: 240, lineHeight: 1.55 }}
             >
               Building the world&apos;s most trusted public information
               infrastructure.
@@ -61,18 +77,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <Typography
-              sx={{ fontWeight: 700, fontSize: '0.95rem', mb: 1.75 }}
-            >
+            <Typography sx={{ fontWeight: 700, fontSize: "0.95rem", mb: 1.75 }}>
               Company
             </Typography>
             <FooterLink to="/contact">Contact</FooterLink>
           </div>
 
           <div>
-            <Typography
-              sx={{ fontWeight: 700, fontSize: '0.95rem', mb: 1.75 }}
-            >
+            <Typography sx={{ fontWeight: 700, fontSize: "0.95rem", mb: 1.75 }}>
               Legal
             </Typography>
             <FooterLink href="#">Privacy Policy</FooterLink>
@@ -81,12 +93,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <Typography
-              sx={{ fontWeight: 700, fontSize: '0.95rem', mb: 1.75 }}
-            >
+            <Typography sx={{ fontWeight: 700, fontSize: "0.95rem", mb: 1.75 }}>
               Follow Us
             </Typography>
-            <Box sx={{ display: 'flex', gap: 1.25 }}>
+            <Box sx={{ display: "flex", gap: 1.25 }}>
               {SOCIALS.map(({ icon: Icon, label, href }) => (
                 <Box
                   key={label}
@@ -98,16 +108,16 @@ export default function Footer() {
                   sx={{
                     width: 38,
                     height: 38,
-                    borderRadius: '50%',
-                    border: '1px solid',
-                    borderColor: 'divider',
-                    display: 'grid',
-                    placeItems: 'center',
-                    color: 'text.secondary',
-                    transition: 'all 0.2s ease',
-                    '&:hover': {
-                      color: 'text.primary',
-                      borderColor: 'text.primary',
+                    borderRadius: "50%",
+                    border: "1px solid",
+                    borderColor: "divider",
+                    display: "grid",
+                    placeItems: "center",
+                    color: "text.secondary",
+                    transition: "all 0.2s ease",
+                    "&:hover": {
+                      color: "text.primary",
+                      borderColor: "text.primary",
                     },
                   }}
                 >
@@ -119,13 +129,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+      <Box sx={{ borderTop: "1px solid", borderColor: "divider" }}>
         <Typography
           variant="caption"
           sx={{
-            display: 'block',
-            textAlign: 'center',
-            color: 'text.secondary',
+            display: "block",
+            textAlign: "center",
+            color: "text.secondary",
             py: 2.5,
           }}
         >
@@ -133,5 +143,5 @@ export default function Footer() {
         </Typography>
       </Box>
     </Box>
-  )
+  );
 }

@@ -88,7 +88,6 @@ export default function Footer() {
               Legal
             </Typography>
             <FooterLink href="#">Privacy Policy</FooterLink>
-            <FooterLink href="#">Terms of Service</FooterLink>
             <FooterLink href="#">Cookie Policy</FooterLink>
           </div>
 

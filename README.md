@@ -62,11 +62,12 @@ vercel dev
 3. **Verify your domain** (required to email real users):
    - Resend → **Domains → Add Domain** → enter `presspaper.ai`.
    - Add the shown DNS records (SPF/DKIM) at your domain registrar.
-   - Once verified, set `FROM_EMAIL="Presspaper <hello@presspaper.ai>"`.
+   - Once verified, set `FROM_EMAIL="Presspaper <info@presspaper.ai>"`.
 
    ⚠️ **Until a domain is verified**, Resend's sandbox sender
    (`onboarding@resend.dev`) can only deliver to the email address you registered
    with. So verify the domain before launch, or test with your own email first.
+
 4. **(Optional) Collect a mailing list:** Resend → **Audiences → Create**, copy the
    Audience ID into `RESEND_AUDIENCE_ID`. Every signup is then saved there so you
    can email everyone when you launch.

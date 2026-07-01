@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography } from "@mui/material";
 import {
   ShieldCheck,
   Crosshair,
@@ -7,56 +7,56 @@ import {
   Zap,
   Users,
   FileText,
-} from 'lucide-react'
-import FeatureCard from './FeatureCard.jsx'
+} from "lucide-react";
+import FeatureCard from "./FeatureCard.jsx";
 
 const ROW_ONE = [
   {
     icon: ShieldCheck,
-    title: 'Trust First',
+    title: "Trust First",
     description:
-      'We prioritize accuracy and rely on official, verifiable sources.',
+      "We prioritise accuracy and rely on official, verifiable sources.",
   },
   {
     icon: Crosshair,
-    title: 'Clarity in Complexity',
+    title: "Clarity in Complexity",
     description:
-      'We turn complex information into clear, actionable understanding.',
+      "We turn complex information into clear, actionable understanding.",
   },
   {
     icon: GlobeIcon,
-    title: 'Built for Everyone',
+    title: "Built for Everyone",
     description:
-      'From policymakers to researchers, our infrastructure is for every informed citizen.',
+      "From policymakers to researchers, our infrastructure is for every informed citizen.",
   },
   {
     icon: Lock,
-    title: 'Independent & Neutral',
+    title: "Independent & Neutral",
     description:
-      'We are not aligned with any agenda—only with the truth and public record.',
+      "We are not aligned with any agenda—only with the truth and public record.",
   },
-]
+];
 
 const ROW_TWO = [
   {
     icon: Zap,
-    title: 'Real-Time & Relevant',
+    title: "Real-Time & Relevant",
     description:
-      'Receive important updates as they happen, tailored to the topics that matter to you.',
+      "Receive important updates as they happen, tailored to the topics that matter to you.",
   },
   {
     icon: Users,
-    title: 'Engage with Confidence',
+    title: "Engage with Confidence",
     description:
-      'Discuss, react, and share in a space built for real people, not bots.',
+      "Discuss, react, and share in a space built for real people, not bots.",
   },
   {
     icon: FileText,
-    title: 'Permanent Public Record',
+    title: "Permanent Public Record",
     description:
-      'A searchable archive of what was said, when it happened—preserved for the public.',
+      "A searchable archive of what was said, when it happened—preserved for the public.",
   },
-]
+];
 
 export default function WhatIsIt() {
   return (
@@ -64,9 +64,9 @@ export default function WhatIsIt() {
       <div className="mb-10 text-center sm:mb-12">
         <Typography
           sx={{
-            color: 'text.secondary',
-            letterSpacing: '0.18em',
-            fontSize: '0.75rem',
+            color: "text.secondary",
+            letterSpacing: "0.18em",
+            fontSize: "0.75rem",
             fontWeight: 600,
             mb: 1.5,
           }}
@@ -77,8 +77,8 @@ export default function WhatIsIt() {
           component="h2"
           sx={{
             fontWeight: 800,
-            fontSize: { xs: '1.6rem', sm: '2rem' },
-            letterSpacing: '-0.01em',
+            fontSize: { xs: "1.6rem", sm: "2rem" },
+            letterSpacing: "-0.01em",
           }}
         >
           Information you can trust. Updates you can act on.
@@ -97,5 +97,5 @@ export default function WhatIsIt() {
         ))}
       </div>
     </section>
-  )
+  );
 }

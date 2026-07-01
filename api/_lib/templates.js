@@ -1,12 +1,12 @@
 // Branded, inline-styled HTML emails (inline styles = best email-client support).
 
-const BRAND = '#ffffff'
-const BG = '#0a0a0a'
-const CARD = '#111111'
-const MUTED = '#9b9b9b'
-const BORDER = '#262626'
+const BRAND = "#ffffff";
+const BG = "#0a0a0a";
+const CARD = "#111111";
+const MUTED = "#9b9b9b";
+const BORDER = "#262626";
 
-function layout({ title, bodyHtml, preheader = '' }) {
+function layout({ title, bodyHtml, preheader = "" }) {
   return `<!doctype html>
 <html>
   <head>
@@ -44,7 +44,7 @@ function layout({ title, bodyHtml, preheader = '' }) {
       </tr>
     </table>
   </body>
-</html>`
+</html>`;
 }
 
 export function welcomeEmail() {
@@ -54,7 +54,7 @@ export function welcomeEmail() {
     </h1>
     <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:#d4d4d4;">
       Thanks for signing up for early access to <strong style="color:${BRAND};">Presspaper</strong> —
-      a global public information platform that centralizes and delivers
+      a global public information platform that centralises and delivers
       <strong style="color:${BRAND};">verified updates from official institutional sources</strong>.
     </p>
     <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:#d4d4d4;">
@@ -69,38 +69,45 @@ export function welcomeEmail() {
     <p style="margin:0;font-size:14px;line-height:1.65;color:${MUTED};">
       Have a question in the meantime? Just reply to this email.
     </p>
-  `
+  `;
   return {
     subject: "You're on the list — Presspaper early access",
     html: layout({
-      title: 'Welcome to Presspaper',
-      preheader: "Thanks for signing up — we'll be in touch when early access opens.",
+      title: "Welcome to Presspaper",
+      preheader:
+        "Thanks for signing up — we'll be in touch when early access opens.",
       bodyHtml,
     }),
-  }
+  };
 }
 
 export function contactNotification({ name, email, subject, message }) {
-  const safe = (s) => String(s || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  const safe = (s) =>
+    String(s || "")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
   const bodyHtml = `
     <h1 style="margin:0 0 16px;font-size:22px;font-weight:800;color:${BRAND};">New contact message</h1>
     <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;font-size:14px;color:#d4d4d4;">
       <tr><td style="padding:6px 0;color:${MUTED};width:90px;">Name</td><td style="padding:6px 0;color:${BRAND};">${safe(name)}</td></tr>
       <tr><td style="padding:6px 0;color:${MUTED};">Email</td><td style="padding:6px 0;color:${BRAND};">${safe(email)}</td></tr>
-      <tr><td style="padding:6px 0;color:${MUTED};">Subject</td><td style="padding:6px 0;color:${BRAND};">${safe(subject) || '—'}</td></tr>
+      <tr><td style="padding:6px 0;color:${MUTED};">Subject</td><td style="padding:6px 0;color:${BRAND};">${safe(subject) || "—"}</td></tr>
     </table>
     <div style="margin:20px 0 0;padding:16px 20px;border:1px solid ${BORDER};border-radius:12px;background:#0d0d0d;">
       <p style="margin:0;font-size:14px;line-height:1.65;color:#d4d4d4;white-space:pre-wrap;">${safe(message)}</p>
     </div>
-  `
+  `;
   return {
-    subject: `New contact: ${subject || 'No subject'} — from ${name}`,
-    html: layout({ title: 'New contact message', bodyHtml }),
-  }
+    subject: `New contact: ${subject || "No subject"} — from ${name}`,
+    html: layout({ title: "New contact message", bodyHtml }),
+  };
 }
 
 export function contactAck({ name }) {
-  const first = String(name || '').trim().split(' ')[0] || 'there'
+  const first =
+    String(name || "")
+      .trim()
+      .split(" ")[0] || "there";
   const bodyHtml = `
     <h1 style="margin:0 0 16px;font-size:24px;font-weight:800;color:${BRAND};">Thanks, ${first}.</h1>
     <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:#d4d4d4;">
@@ -108,13 +115,13 @@ export function contactAck({ name }) {
       <strong style="color:${BRAND};">1–2 business days</strong>.
     </p>
     <p style="margin:0;font-size:14px;line-height:1.65;color:${MUTED};">— The Presspaper team</p>
-  `
+  `;
   return {
-    subject: 'We received your message — Presspaper',
+    subject: "We received your message — Presspaper",
     html: layout({
-      title: 'Thanks for contacting Presspaper',
+      title: "Thanks for contacting Presspaper",
       preheader: "We'll get back to you within 1–2 business days.",
       bodyHtml,
     }),
-  }
+  };
 }

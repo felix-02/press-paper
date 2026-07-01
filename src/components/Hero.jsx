@@ -1,11 +1,11 @@
-import { Box, Typography } from '@mui/material'
-import { Clock } from 'lucide-react'
-import EmailCapture from './EmailCapture.jsx'
-import Globe from './Globe.jsx'
-import { useColorMode } from '../context/ColorModeContext.jsx'
+import { Box, Typography } from "@mui/material";
+import { Clock } from "lucide-react";
+import EmailCapture from "./EmailCapture.jsx";
+import Globe from "./Globe.jsx";
+import { useColorMode } from "../context/ColorModeContext.jsx";
 
 export default function Hero() {
-  const { mode } = useColorMode()
+  const { mode } = useColorMode();
 
   return (
     <section className="mx-auto max-w-container px-5 pb-16 pt-12 sm:px-8 sm:pb-24 sm:pt-16">
@@ -17,7 +17,7 @@ export default function Hero() {
             className="display-heading"
             sx={{
               fontWeight: 800,
-              fontSize: { xs: '2.6rem', sm: '3.4rem', md: '3.9rem' },
+              fontSize: { xs: "2.6rem", sm: "3.4rem", md: "3.9rem" },
               mb: 2.5,
             }}
           >
@@ -28,29 +28,29 @@ export default function Hero() {
 
           <Typography
             sx={{
-              color: 'text.secondary',
-              fontSize: { xs: '1rem', sm: '1.05rem' },
+              color: "text.secondary",
+              fontSize: { xs: "1rem", sm: "1.05rem" },
               maxWidth: 460,
               lineHeight: 1.6,
               mb: 3.5,
             }}
           >
-            Presspaper is a global public information platform that centralizes
+            Presspaper is a global public information platform that centralises
             and delivers verified updates from official institutional sources.
           </Typography>
 
           {/* Launching Soon pill */}
           <Box
             sx={{
-              display: 'inline-flex',
-              alignItems: 'center',
+              display: "inline-flex",
+              alignItems: "center",
               gap: 1,
               px: 1.75,
               py: 1,
               mb: 3,
-              borderRadius: '10px',
-              border: '1px solid',
-              borderColor: 'divider',
+              borderRadius: "10px",
+              border: "1px solid",
+              borderColor: "divider",
             }}
           >
             <Clock size={15} />
@@ -67,10 +67,10 @@ export default function Hero() {
         {/* Right: globe */}
         <div className="order-1 lg:order-2">
           <div className="mx-auto aspect-square w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[460px]">
-            <Globe dark={mode === 'dark'} />
+            <Globe dark={mode === "dark"} />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
